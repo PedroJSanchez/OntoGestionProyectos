@@ -1,6 +1,6 @@
-﻿# Ontología para Gestión Colaborativa de Proyectos de Software
+# Ontología para Gestión Colaborativa de Proyectos de Software [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-## 1. Análisis de la Ontología
+## 1. Análisis de la Ontología 
 
 La ontología para el sistema multiagente de gestión colaborativa de proyectos de software debe representar adecuadamente la información intercambiada entre los cuatro tipos de agentes principales (Coordinador, Tarea, Recursos y Decisión), permitiéndoles coordinarse para optimizar recursos y cumplir con los plazos de entrega.
 
