@@ -1,4 +1,4 @@
-package es.ujaen.ssmmaa;
+package es.ujaen.ssmmaa.onto;
 
 import java.util.Arrays;
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.List;
  * necesarios para la comunicación entre agentes en el sistema
  * de gestión colaborativa de proyectos de software.
  */
-public interface Constantes {
+public interface Vocabulario {
 
     /**
      * Nombre de la ontología para la gestión colaborativa de proyectos.
@@ -20,14 +20,14 @@ public interface Constantes {
      * Todos los agentes que formen parte del sistema de gestión de proyectos
      * deberán registrarse bajo este nombre de servicio.
      */
-    String NOMBRE_SERVICIO = "Gestion-Proyectos-Software";
+    String TIPO_SERVICIO = "Gestion-Proyectos-Software";
 
     /**
      * Enumerado que define los tipos de servicios generales que pueden
      * registrarse en las páginas amarillas. Este enumerado se usará en el
      * campo 'type' del ServiceDescription.
      */
-    enum TipoServicio {
+    enum NombreServicio {
         // Tipos principales según la estructura del proyecto
         COORDINADOR,    // Servicios de coordinación y planificación
         DESARROLLO,     // Servicios de desarrollo y tareas

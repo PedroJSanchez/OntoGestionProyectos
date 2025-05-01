@@ -1,4 +1,4 @@
-# Ontología para Gestión Colaborativa de Proyectos de Software [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+﻿# Ontología para Gestión Colaborativa de Proyectos de Software [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 ## 1. Análisis de la Ontología 
 
@@ -33,180 +33,24 @@ La ontología se implementará como una especialización de la clase `BeanOntolo
 
 El diseño de la ontología incluirá la siguiente estructura de paquetes:
 
--   `es.ujaen.ssmmaa`: paquete principal de la ontología
+-   `es.ujaen.ssmmaa.onto`: paquete principal de la ontología
     -   `OntoGestionProyectos`: clase que representa la ontología basada en BeanOntology.
-    -   `Constantes`: interface Java donde se encuentran los elementos de vocabulario utilizados.
--   `es.ujaen.ssmmaa.gestion.elementos`: paquete con los elementos de la ontología
+    -   `Vocabulario`: interface Java donde se encuentran los elementos de vocabulario utilizados.
+-   `es.ujaen.ssmmaa.onto.elementos`: paquete con los elementos de la ontología
     -   Conceptos fundamentales
     -   Actions para iniciar los protocolos
     -   Predicados para las respuestas
 
-### 2.2 Diseño de Elementos Principales
+### 2.2 Registro en las páginas amarillas
 
-#### 2.2.1 Concepts
+Todos los agentes deberán realizar el registro en las páginas amarillas siguiendo las siguientes indicaciones:
 
-```
-- Agente (abstracto)
-  - identificador: String
-  - AID: AID
-  - AgenteTarea (extiende Agente)
-    - habilidades: List<LineasDesarrollo>
-    - experiencia: ExperienciaEquipo
-    - tareasAsignadas: List<Tarea>
-  - AgenteRecursos (extiende Agente)
-  - AgenteCoordinador (extiende Agente)
-  - AgenteDecision (extiende Agente)
-
-- Proyecto
-  - idProyecto: String
-  - nombre: String
-  - descripcion: String
-  - fechaInicio: Date
-  - fechaLimite: Date
-  - prioridad: Prioridad
-  - estado: EstadoProyecto
-  - tareas: List<Tarea>
-
-- Tarea
-  - idTarea: String
-  - nombre: String
-  - descripcion: String
-  - proyecto: String (idProyecto)
-  - habilidadesRequeridas: List<LineasDesarrollo>
-  - estado: EstadoTarea
-  - prioridad: Prioridad
-  - tiempoEstimado: int (horas)
-  - dependencias: List<String> (idTareas)
-  - recursos: List<SolicitudRecurso>
-
-- SolicitudRecurso
-  - recurso: RecursoDesarrollo
-  - cantidad: int
-  - tiempoUso: int (horas)
-  - prioridad: Prioridad
-
-- Coalicion
-  - idCoalicion: String
-  - objetivo: ObjetivoCoalicion
-  - tareaAsociada: String (idTarea)
-  - miembros: List<AgenteTarea>
-  - recursos: List<SolicitudRecurso>
-  - fechaInicio: Date
-  - fechaFin: Date
-
-- InfoEstado
-  - timestamp: Date
-  - descripcion: String
-  - idProyecto: String
-  - idTarea: String (opcional)
-
-```
-
-#### 2.2.2 AgentActions
-
-```
-- ProponerProyecto
-  - proyecto: Proyecto
-
-- AsignarRecursos
-  - idProyecto: String
-  - recursos: List<SolicitudRecurso>
-  - equipoDestinatario: List<AgenteTarea>
-  - prioridad: Prioridad
-  - periodoAsignacion: [Date, Date]
-
-- SolicitarRecursos
-  - idTarea: String
-  - idProyecto: String
-  - recursos: List<SolicitudRecurso>
-  - periodo: [Date, Date]
-
-- AsignarTarea
-  - tarea: Tarea
-
-- ConsultarEstado
-  - idProyecto: String
-  - idTarea: String (opcional)
-  - nivelDetalle: int
-
-- ProponerCoalicion
-  - coalicion: Coalicion
-
-- SuscribirMonitoreo
-  - idProyecto: String
-  - metricas: List<String>
-  - frecuencia: int (minutos)
-
-```
-
-#### 2.2.3 Predicates
-
-```
-- AceptacionProyecto
-  - idProyecto: String
-  - condicionesInicio: String
-  - parametrosGestion: Map<String, Object>
-
-- RechazoProyecto
-  - idProyecto: String
-  - justificacion: String
-  - alternativas: String
-
-- AceptacionAsignacionRecursos
-  - idProyecto: String
-  - recursos: List<SolicitudRecurso>
-  - periodoConfirmado: [Date, Date]
-
-- RechazoAsignacionRecursos
-  - idProyecto: String
-  - razon: RazonRechazo
-  - alternativas: List<SolicitudRecurso>
-
-- RecursoAsignado
-  - idTarea: String
-  - recursos: List<SolicitudRecurso>
-  - periodo: [Date, Date]
-
-- ErrorAsignacion
-  - idTarea: String
-  - error: ErrorAsignacionRecurso
-  - detalles: String
-
-- AceptacionTarea
-  - idTarea: String
-  - agente: AgenteTarea
-  - condiciones: String
-
-- RechazoTarea
-  - idTarea: String
-  - razon: RazonRechazoTarea
-  - justificacion: String
-
-- InfoEstadoTarea
-  - idTarea: String
-  - estado: EstadoTarea
-  - avance: float (porcentaje)
-  - comentarios: String
-  - problemas: List<String>
-
-- RespuestaParticipacion
-  - idCoalicion: String
-  - agente: AgenteTarea
-  - nivelCompromiso: float
-  - habilidadesOfrecidas: List<LineasDesarrollo>
-
-- ActualizacionEstadoProyecto
-  - idProyecto: String
-  - estado: EstadoProyecto
-  - avance: float (porcentaje)
-  - tareas: Map<String, EstadoTarea>
-  - incidencias: List<String>
-
-```
+ - El tipo de servicio será para todos los agentes el mismo, `TIPO_SERVICIO`, que se encuentra definido en el vocabulario de la ontología.
+ - En nombre del servicio corresponderá al nombre del enumerado, `NombreServicio`, según el agente que se esté registrando en las páginas amarillas. El enumerado también forma parte del vocabulario de la ontología.
 
 ## 3. Protocolos de Comunicación
 
-A continuación, se detallan los protocolos de comunicación entre los agentes.
+A continuación, se detallan los protocolos de comunicación entre los agentes. En los diagramas se muestran el intercambio de información entre los agentes. En el protocolo se define los elementos de ontología que deberá integrar como parte del contenido de los mensajes. El mensaje inicial será un `AgentAction` y las respuestas son `Predicates`. Para poder componer estos elementos también será necesario definir los `Concept` que formarán parte de cada uno de ellos.
 
 ### 3.1 Protocolo FIPA-Propose: Propuesta de Proyectos
 

@@ -1,6 +1,5 @@
-package es.ujaen.ssmmaa.elementos;
+package es.ujaen.ssmmaa.onto;
 
-import es.ujaen.ssmmaa.Constantes;
 import jade.content.onto.BeanOntology;
 import jade.content.onto.BeanOntologyException;
 import jade.content.onto.Ontology;
@@ -40,7 +39,7 @@ public class OntoGestionProyectos extends BeanOntology {
      */
     private OntoGestionProyectos() {
         // Llamamos al constructor de la superclase con el nombre de la ontología y la ontología básica
-        super(Constantes.ONTOLOGY_NAME, BasicOntology.getInstance());
+        super(Vocabulario.ONTOLOGY_NAME, BasicOntology.getInstance());
 
         try {
             // Registramos los paquetes que contienen los elementos de la ontología
