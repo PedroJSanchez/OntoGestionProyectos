@@ -21,14 +21,18 @@ public class OntoGestionProyectos extends BeanOntology {
     private static final Logger LOGGER = Logger.getJADELogger(OntoGestionProyectos.class.getName());
 
     // Instancia única de la ontología (patrón singleton)
-    private static Ontology theInstance = new OntoGestionProyectos();
+    private static Ontology theInstance;
 
     /**
      * Obtiene la instancia única de la ontología.
      *
      * @return Instancia de la ontología OntoGestionProyectos.
      */
-    public static Ontology getInstance() {
+    public synchronized static Ontology getInstance() throws BeanOntologyException {
+        if (theInstance == null) {
+            theInstance = new OntoGestionProyectos();
+        }
+
         return theInstance;
     }
 
@@ -67,7 +71,7 @@ public class OntoGestionProyectos extends BeanOntology {
      *
      * Nota: Este método debe usarse con precaución y solo en contextos de prueba.
      */
-    public static void reset() {
+    public synchronized static void reset() {
         theInstance = new OntoGestionProyectos();
     }
 }
