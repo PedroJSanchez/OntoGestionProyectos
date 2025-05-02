@@ -49,13 +49,13 @@ public class OntoGestionProyectos extends BeanOntology {
             // Registramos los paquetes que contienen los elementos de la ontología
 
             // Conceptos básicos (Agente, Proyecto, Tarea, etc.)
-            add("es.ujaen.ssmmaa.gestion.elementos.conceptos");
+            add("es.ujaen.ssmmaa.onto.elementos.conceptos");
 
             // Acciones de los agentes (ProponerProyecto, AsignarRecursos, etc.)
-            add("es.ujaen.ssmmaa.gestion.elementos.acciones");
+            add("es.ujaen.ssmmaa.onto.elementos.acciones");
 
             // Predicados para las respuestas (AceptacionProyecto, RechazoTarea, etc.)
-            add("es.ujaen.ssmmaa.gestion.elementos.predicados");
+            add("es.ujaen.ssmmaa.onto.elementos.predicados");
 
         } catch (BeanOntologyException boe) {
             // Registramos el error pero permitimos que la aplicación continúe
