@@ -4,7 +4,7 @@ package es.ujaen.ssmmaa.onto.elementos.predicados;
 import jade.content.Predicate;
 import jade.content.onto.annotations.Slot;
 
-import java.time.Instant;
+import java.util.Date;
 
 
 /**
@@ -13,7 +13,7 @@ import java.time.Instant;
  */
 public class RechazoConsulta implements Predicate {
     private String idConsulta;
-    private Instant fechaRechazo;
+    private Date fechaRechazo;
     private String razonRechazo;
 
 
@@ -21,7 +21,7 @@ public class RechazoConsulta implements Predicate {
     public RechazoConsulta() {
     }
 
-    public RechazoConsulta(String idConsulta, Instant fechaRechazo, String razonRechazo) {
+    public RechazoConsulta(String idConsulta, Date fechaRechazo, String razonRechazo) {
         this.idConsulta = idConsulta;
         this.fechaRechazo = fechaRechazo;
         this.razonRechazo = razonRechazo;
@@ -37,11 +37,11 @@ public class RechazoConsulta implements Predicate {
     }
 
     @Slot(mandatory = true, name = "fechaRechazo")
-    public Instant getFechaRechazo() {
+    public Date getFechaRechazo() {
         return fechaRechazo;
     }
 
-    public void setFechaRechazo(Instant fechaRechazo) {
+    public void setFechaRechazo(Date fechaRechazo) {
         this.fechaRechazo = fechaRechazo;
     }
 

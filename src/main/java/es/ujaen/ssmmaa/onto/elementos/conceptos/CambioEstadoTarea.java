@@ -5,7 +5,7 @@ import es.ujaen.ssmmaa.onto.Vocabulario.EstadoTarea;
 import jade.content.Concept;
 import jade.content.onto.annotations.Slot;
 
-import java.time.Instant;
+import java.util.Date;
 
 
 /**
@@ -15,13 +15,13 @@ public class CambioEstadoTarea implements Concept {
     private String idTarea;
     private EstadoTarea estadoAnterior;
     private EstadoTarea estadoNuevo;
-    private Instant fechaCambio;
+    private Date fechaCambio;
     private double progresoPorcentaje;
 
     public CambioEstadoTarea() {
     }
 
-    public CambioEstadoTarea(String idTarea, EstadoTarea estadoAnterior, EstadoTarea estadoNuevo, Instant fechaCambio, double progresoPorcentaje) {
+    public CambioEstadoTarea(String idTarea, EstadoTarea estadoAnterior, EstadoTarea estadoNuevo, Date fechaCambio, double progresoPorcentaje) {
         this.idTarea = idTarea;
         this.estadoAnterior = estadoAnterior;
         this.estadoNuevo = estadoNuevo;
@@ -57,11 +57,11 @@ public class CambioEstadoTarea implements Concept {
     }
 
     @Slot(mandatory = true, name = "fechaCambio")
-    public Instant getFechaCambio() {
+    public Date getFechaCambio() {
         return fechaCambio;
     }
 
-    public void setFechaCambio(Instant fechaCambio) {
+    public void setFechaCambio(Date fechaCambio) {
         this.fechaCambio = fechaCambio;
     }
 
@@ -72,5 +72,16 @@ public class CambioEstadoTarea implements Concept {
 
     public void setProgresoPorcentaje(double progresoPorcentaje) {
         this.progresoPorcentaje = progresoPorcentaje;
+    }
+
+    @Override
+    public String toString() {
+        return "CambioEstadoTarea{" +
+                "idTarea='" + idTarea + '\'' +
+                ", estadoAnterior=" + estadoAnterior +
+                ", estadoNuevo=" + estadoNuevo +
+                ", fechaCambio=" + fechaCambio +
+                ", progresoPorcentaje=" + progresoPorcentaje +
+                '}';
     }
 }

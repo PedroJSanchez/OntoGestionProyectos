@@ -37,4 +37,12 @@ public class SolicitudRecurso implements Concept {
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
+
+    @Override
+    public String toString() {
+        return "SolicitudRecurso{" +
+                "tipoRecurso=" + tipoRecurso +
+                ", cantidad=" + cantidad +
+                '}';
+    }
 }

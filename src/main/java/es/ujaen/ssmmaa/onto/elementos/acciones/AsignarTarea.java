@@ -5,11 +5,12 @@ import es.ujaen.ssmmaa.onto.Vocabulario.LineasDesarrollo;
 import es.ujaen.ssmmaa.onto.Vocabulario.Prioridad;
 import jade.content.AgentAction;
 
-import java.time.Instant;
 
 import jade.content.onto.annotations.AggregateSlot;
 import jade.content.onto.annotations.Slot;
 import jade.util.leap.List;
+
+import java.util.Date;
 
 /**
  * Clase que representa la acción de asignar tareas específicas a los Agentes de Tarea.
@@ -19,15 +20,15 @@ public class AsignarTarea implements AgentAction {
     private String idTarea;
     private String idProyecto;
     private List habilidadesRequeridas;
-    private Instant fechaInicio;
-    private Instant fechaFin;
+    private Date fechaInicio;
+    private Date fechaFin;
     private Prioridad prioridad;
 
     public AsignarTarea() {
     }
 
-    public AsignarTarea(String idTarea, String idProyecto, List habilidadesRequeridas, Instant fechaInicio,
-                        Instant fechaFin, Prioridad prioridad) {
+    public AsignarTarea(String idTarea, String idProyecto, List habilidadesRequeridas, Date fechaInicio,
+                        Date fechaFin, Prioridad prioridad) {
         this.idTarea = idTarea;
         this.idProyecto = idProyecto;
         this.habilidadesRequeridas = habilidadesRequeridas;
@@ -64,20 +65,20 @@ public class AsignarTarea implements AgentAction {
     }
 
     @Slot(mandatory = true, name = "fechaInicio")
-    public Instant getFechaInicio() {
+    public Date getFechaInicio() {
         return fechaInicio;
     }
 
-    public void setFechaInicio(Instant fechaInicio) {
+    public void setFechaInicio(Date fechaInicio) {
         this.fechaInicio = fechaInicio;
     }
 
     @Slot(mandatory = true, name = "fechaFin")
-    public Instant getFechaFin() {
+    public Date getFechaFin() {
         return fechaFin;
     }
 
-    public void setFechaFin(Instant fechaFin) {
+    public void setFechaFin(Date fechaFin) {
         this.fechaFin = fechaFin;
     }
 

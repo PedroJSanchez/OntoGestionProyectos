@@ -1,16 +1,17 @@
 package es.ujaen.ssmmaa.onto.elementos.predicados;
 
 
-import es.ujaen.ssmmaa.onto.Vocabulario.EstadoTarea;
 import es.ujaen.ssmmaa.onto.elementos.conceptos.EstadoTareaInfo;
 import es.ujaen.ssmmaa.onto.elementos.conceptos.RecursoEntregado;
 import jade.content.Predicate;
 
-import java.time.Instant;
+
 
 import jade.content.onto.annotations.AggregateSlot;
 import jade.content.onto.annotations.Slot;
 import jade.util.leap.List;
+
+import java.util.Date;
 
 /**
  * Clase que representa la información detallada del estado de tareas.
@@ -22,14 +23,14 @@ public class InfoEstadoTarea implements Predicate {
     private List estadosTareas;
     private double progresoGlobalPorcentaje;
     private List recursosAsignados;
-    private Instant fechaActualizacion;
+    private Date fechaActualizacion;
 
     // Constructores, getters y setters
     public InfoEstadoTarea() {
     }
 
     public InfoEstadoTarea(String idConsulta, String idProyecto, List estadosTareas, double progresoGlobalPorcentaje,
-                           List recursosAsignados, Instant fechaActualizacion) {
+                           List recursosAsignados, Date fechaActualizacion) {
         this.idConsulta = idConsulta;
         this.idProyecto = idProyecto;
         this.estadosTareas = estadosTareas;
@@ -84,11 +85,11 @@ public class InfoEstadoTarea implements Predicate {
     }
 
     @Slot(mandatory = true, name = "fechaActualizacion")
-    public Instant getFechaActualizacion() {
+    public Date getFechaActualizacion() {
         return fechaActualizacion;
     }
 
-    public void setFechaActualizacion(Instant fechaActualizacion) {
+    public void setFechaActualizacion(Date fechaActualizacion) {
         this.fechaActualizacion = fechaActualizacion;
     }
 }

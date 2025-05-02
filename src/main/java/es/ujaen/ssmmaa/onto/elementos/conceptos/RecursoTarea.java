@@ -47,4 +47,13 @@ public class RecursoTarea implements Concept {
     public void setHorasNecesarias(int horasNecesarias) {
         this.horasNecesarias = horasNecesarias;
     }
+
+    @Override
+    public String toString() {
+        return "RecursoTarea{" +
+                "tipoRecurso=" + tipoRecurso +
+                ", cantidad=" + cantidad +
+                ", horasNecesarias=" + horasNecesarias +
+                '}';
+    }
 }

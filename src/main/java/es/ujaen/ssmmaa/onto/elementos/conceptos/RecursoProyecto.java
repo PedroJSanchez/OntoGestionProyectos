@@ -48,4 +48,13 @@ public class RecursoProyecto implements Concept {
     public void setHorasEstimadas(int horasEstimadas) {
         this.horasEstimadas = horasEstimadas;
     }
+
+    @Override
+    public String toString() {
+        return "RecursoProyecto{" +
+                "tipoRecurso=" + tipoRecurso +
+                ", cantidad=" + cantidad +
+                ", horasEstimadas=" + horasEstimadas +
+                '}';
+    }
 }

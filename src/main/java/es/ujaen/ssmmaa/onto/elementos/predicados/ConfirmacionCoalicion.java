@@ -4,10 +4,10 @@ package es.ujaen.ssmmaa.onto.elementos.predicados;
 import jade.content.Predicate;
 import jade.content.onto.annotations.AggregateSlot;
 import jade.content.onto.annotations.Slot;
-import jade.core.AID;
 
-import java.time.Instant;
 import jade.util.leap.List;
+
+import java.util.Date;
 
 /**
  * Clase que representa la confirmación final de una coalición.
@@ -15,9 +15,9 @@ import jade.util.leap.List;
  */
 public class ConfirmacionCoalicion implements Predicate {
     private String idCoalicion;
-    private Instant fechaConfirmacion;
-    private Instant fechaInicioCoalicion;
-    private Instant fechaFinCoalicion;
+    private Date fechaConfirmacion;
+    private Date fechaInicioCoalicion;
+    private Date fechaFinCoalicion;
     private List participantesConfirmados;
 
 
@@ -25,8 +25,8 @@ public class ConfirmacionCoalicion implements Predicate {
     public ConfirmacionCoalicion() {
     }
 
-    public ConfirmacionCoalicion(String idCoalicion, Instant fechaConfirmacion, Instant fechaInicioCoalicion,
-                                 Instant fechaFinCoalicion, List participantesConfirmados) {
+    public ConfirmacionCoalicion(String idCoalicion, Date fechaConfirmacion, Date fechaInicioCoalicion,
+                                 Date fechaFinCoalicion, List participantesConfirmados) {
         this.idCoalicion = idCoalicion;
         this.fechaConfirmacion = fechaConfirmacion;
         this.fechaInicioCoalicion = fechaInicioCoalicion;
@@ -44,29 +44,29 @@ public class ConfirmacionCoalicion implements Predicate {
     }
 
     @Slot(mandatory = true, name = "fechaConfirmacion")
-    public Instant getFechaConfirmacion() {
+    public Date getFechaConfirmacion() {
         return fechaConfirmacion;
     }
 
-    public void setFechaConfirmacion(Instant fechaConfirmacion) {
+    public void setFechaConfirmacion(Date fechaConfirmacion) {
         this.fechaConfirmacion = fechaConfirmacion;
     }
 
     @Slot(mandatory = true, name = "fechaInicioCoalicion")
-    public Instant getFechaInicioCoalicion() {
+    public Date getFechaInicioCoalicion() {
         return fechaInicioCoalicion;
     }
 
-    public void setFechaInicioCoalicion(Instant fechaInicioCoalicion) {
+    public void setFechaInicioCoalicion(Date fechaInicioCoalicion) {
         this.fechaInicioCoalicion = fechaInicioCoalicion;
     }
 
     @Slot(mandatory = true, name = "fechaFinCoalicion")
-    public Instant getFechaFinCoalicion() {
+    public Date getFechaFinCoalicion() {
         return fechaFinCoalicion;
     }
 
-    public void setFechaFinCoalicion(Instant fechaFinCoalicion) {
+    public void setFechaFinCoalicion(Date fechaFinCoalicion) {
         this.fechaFinCoalicion = fechaFinCoalicion;
     }
 

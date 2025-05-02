@@ -38,4 +38,12 @@ public class Recurso implements Concept {
     public void setCantidadDisponible(int cantidadDisponible) {
         this.cantidadDisponible = cantidadDisponible;
     }
+
+    @Override
+    public String toString() {
+        return "Recurso{" +
+                "tipoRecurso=" + tipoRecurso +
+                ", cantidadDisponible=" + cantidadDisponible +
+                '}';
+    }
 }

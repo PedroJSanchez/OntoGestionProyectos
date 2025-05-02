@@ -4,7 +4,8 @@ package es.ujaen.ssmmaa.onto.elementos.predicados;
 import jade.content.Predicate;
 import jade.content.onto.annotations.Slot;
 
-import java.time.Instant;
+import java.util.Date;
+
 
 /**
  * Clase que representa la confirmación del registro de una coalición.
@@ -12,14 +13,14 @@ import java.time.Instant;
  */
 public class RegistroCoalicionConfirmado implements Predicate {
     private String idCoalicion;
-    private Instant fechaRegistro;
+    private Date fechaRegistro;
 
 
     // Constructores, getters y setters
     public RegistroCoalicionConfirmado() {
     }
 
-    public RegistroCoalicionConfirmado(String idCoalicion, Instant fechaRegistro) {
+    public RegistroCoalicionConfirmado(String idCoalicion, Date fechaRegistro) {
         this.idCoalicion = idCoalicion;
         this.fechaRegistro = fechaRegistro;
     }
@@ -34,11 +35,11 @@ public class RegistroCoalicionConfirmado implements Predicate {
     }
 
     @Slot(mandatory = true, name = "fechaRegistro")
-    public Instant getFechaRegistro() {
+    public Date getFechaRegistro() {
         return fechaRegistro;
     }
 
-    public void setFechaRegistro(Instant fechaRegistro) {
+    public void setFechaRegistro(Date fechaRegistro) {
         this.fechaRegistro = fechaRegistro;
     }
 }

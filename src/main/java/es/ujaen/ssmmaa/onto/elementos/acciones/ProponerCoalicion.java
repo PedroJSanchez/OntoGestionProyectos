@@ -2,15 +2,16 @@ package es.ujaen.ssmmaa.onto.elementos.acciones;
 
 
 import es.ujaen.ssmmaa.onto.Vocabulario.LineasDesarrollo;
-import es.ujaen.ssmmaa.onto.Vocabulario.ObjetivoCoalicion;
 import es.ujaen.ssmmaa.onto.Vocabulario.Prioridad;
 import jade.content.AgentAction;
 import jade.content.onto.annotations.AggregateSlot;
 import jade.content.onto.annotations.Slot;
-import jade.core.AID;
 
-import java.time.Instant;
+
+
 import jade.util.leap.List;
+
+import java.util.Date;
 
 /**
  * Clase que representa la acción de proponer la formación de una coalición.
@@ -21,14 +22,14 @@ public class ProponerCoalicion implements AgentAction {
     private String idProyecto;
     private Prioridad prioridad;
     private List habilidadesRequeridas;
-    private Instant fechaInicio;
-    private Instant fechaFin;
+    private Date fechaInicio;
+    private Date fechaFin;
 
     public ProponerCoalicion() {
     }
 
     public ProponerCoalicion(String idCoalicion, String idProyecto, Prioridad prioridad, List habilidadesRequeridas,
-                             Instant fechaInicio, Instant fechaFin) {
+                             Date fechaInicio, Date fechaFin) {
         this.idCoalicion = idCoalicion;
         this.idProyecto = idProyecto;
         this.prioridad = prioridad;
@@ -74,20 +75,20 @@ public class ProponerCoalicion implements AgentAction {
     }
 
     @Slot(mandatory = true, name = "fechaInicio")
-    public Instant getFechaInicio() {
+    public Date getFechaInicio() {
         return fechaInicio;
     }
 
-    public void setFechaInicio(Instant fechaInicio) {
+    public void setFechaInicio(Date fechaInicio) {
         this.fechaInicio = fechaInicio;
     }
 
     @Slot(mandatory = true, name = "fechaFin")
-    public Instant getFechaFin() {
+    public Date getFechaFin() {
         return fechaFin;
     }
 
-    public void setFechaFin(Instant fechaFin) {
+    public void setFechaFin(Date fechaFin) {
         this.fechaFin = fechaFin;
     }
 }

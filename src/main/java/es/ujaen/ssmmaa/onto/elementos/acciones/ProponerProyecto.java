@@ -5,11 +5,11 @@ import es.ujaen.ssmmaa.onto.Vocabulario.LineasDesarrollo;
 import es.ujaen.ssmmaa.onto.elementos.conceptos.RecursoProyecto;
 import jade.content.AgentAction;
 
-import java.time.Instant;
-
 import jade.content.onto.annotations.AggregateSlot;
 import jade.content.onto.annotations.Slot;
 import jade.util.leap.List;
+
+import java.util.Date;
 
 /**
  * Clase que representa la acción de proponer un nuevo proyecto al Agente Coordinador.
@@ -18,8 +18,8 @@ import jade.util.leap.List;
 public class ProponerProyecto implements AgentAction {
     private String idProyecto;
     private String nombreProyecto;
-    private Instant fechaInicio;
-    private Instant fechaFin;
+    private Date fechaInicio;
+    private Date fechaFin;
     private Prioridad prioridad;
     private List habilidadesRequeridas;
     private List recursosEstimados;
@@ -28,7 +28,7 @@ public class ProponerProyecto implements AgentAction {
     public ProponerProyecto() {
     }
 
-    public ProponerProyecto(String idProyecto, String nombreProyecto, Instant fechaInicio, Instant fechaFin,
+    public ProponerProyecto(String idProyecto, String nombreProyecto, Date fechaInicio, Date fechaFin,
                             Prioridad prioridad, List habilidadesRequeridas, List recursosEstimados, double presupuesto) {
         this.idProyecto = idProyecto;
         this.nombreProyecto = nombreProyecto;
@@ -59,20 +59,20 @@ public class ProponerProyecto implements AgentAction {
     }
 
     @Slot(mandatory = true, name = "fechaInicio")
-    public Instant getFechaInicio() {
+    public Date getFechaInicio() {
         return fechaInicio;
     }
 
-    public void setFechaInicio(Instant fechaInicio) {
+    public void setFechaInicio(Date fechaInicio) {
         this.fechaInicio = fechaInicio;
     }
 
     @Slot(mandatory = true, name = "fechaFin")
-    public Instant getFechaFin() {
+    public Date getFechaFin() {
         return fechaFin;
     }
 
-    public void setFechaFin(Instant fechaFin) {
+    public void setFechaFin(Date fechaFin) {
         this.fechaFin = fechaFin;
     }
 

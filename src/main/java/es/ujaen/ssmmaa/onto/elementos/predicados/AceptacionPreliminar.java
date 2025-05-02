@@ -4,7 +4,8 @@ package es.ujaen.ssmmaa.onto.elementos.predicados;
 import jade.content.Predicate;
 import jade.content.onto.annotations.Slot;
 
-import java.time.Instant;
+import java.util.Date;
+
 
 /**
  * Clase que representa la aceptación preliminar de una solicitud.
@@ -12,12 +13,12 @@ import java.time.Instant;
  */
 public class AceptacionPreliminar implements Predicate {
     private String idSolicitud;
-    private Instant fechaAceptacionPreliminar;
+    private Date fechaAceptacionPreliminar;
 
     public AceptacionPreliminar() {
     }
 
-    public AceptacionPreliminar(String idSolicitud, Instant fechaAceptacionPreliminar) {
+    public AceptacionPreliminar(String idSolicitud, Date fechaAceptacionPreliminar) {
         this.idSolicitud = idSolicitud;
         this.fechaAceptacionPreliminar = fechaAceptacionPreliminar;
     }
@@ -32,11 +33,11 @@ public class AceptacionPreliminar implements Predicate {
     }
 
     @Slot(mandatory = true, name = "fechaAceptacionPreliminar")
-    public Instant getFechaAceptacionPreliminar() {
+    public Date getFechaAceptacionPreliminar() {
         return fechaAceptacionPreliminar;
     }
 
-    public void setFechaAceptacionPreliminar(Instant fechaAceptacionPreliminar) {
+    public void setFechaAceptacionPreliminar(Date fechaAceptacionPreliminar) {
         this.fechaAceptacionPreliminar = fechaAceptacionPreliminar;
     }
 }

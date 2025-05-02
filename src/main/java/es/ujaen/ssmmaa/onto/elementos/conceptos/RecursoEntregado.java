@@ -5,7 +5,7 @@ import es.ujaen.ssmmaa.onto.Vocabulario.RecursoDesarrollo;
 import jade.content.Concept;
 import jade.content.onto.annotations.Slot;
 
-import java.time.Instant;
+import java.util.Date;
 
 
 /**
@@ -14,13 +14,13 @@ import java.time.Instant;
 public class RecursoEntregado implements Concept {
     private RecursoDesarrollo tipoRecurso;
     private int cantidadAsignada;
-    private Instant fechaInicio;
-    private Instant fechaFin;
+    private Date fechaInicio;
+    private Date fechaFin;
 
     public RecursoEntregado() {
     }
 
-    public RecursoEntregado(RecursoDesarrollo tipoRecurso, int cantidadAsignada, Instant fechaInicio, Instant fechaFin) {
+    public RecursoEntregado(RecursoDesarrollo tipoRecurso, int cantidadAsignada, Date fechaInicio, Date fechaFin) {
         this.tipoRecurso = tipoRecurso;
         this.cantidadAsignada = cantidadAsignada;
         this.fechaInicio = fechaInicio;
@@ -46,20 +46,30 @@ public class RecursoEntregado implements Concept {
     }
 
     @Slot(mandatory = true, name = "fechaInicio")
-    public Instant getFechaInicio() {
+    public Date getFechaInicio() {
         return fechaInicio;
     }
 
-    public void setFechaInicio(Instant fechaInicio) {
+    public void setFechaInicio(Date fechaInicio) {
         this.fechaInicio = fechaInicio;
     }
 
     @Slot(mandatory = true, name = "fechaFin")
-    public Instant getFechaFin() {
+    public Date getFechaFin() {
         return fechaFin;
     }
 
-    public void setFechaFin(Instant fechaFin) {
+    public void setFechaFin(Date fechaFin) {
         this.fechaFin = fechaFin;
+    }
+
+    @Override
+    public String toString() {
+        return "RecursoEntregado{" +
+                "tipoRecurso=" + tipoRecurso +
+                ", cantidadAsignada=" + cantidadAsignada +
+                ", fechaInicio=" + fechaInicio +
+                ", fechaFin=" + fechaFin +
+                '}';
     }
 }

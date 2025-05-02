@@ -4,7 +4,7 @@ package es.ujaen.ssmmaa.onto.elementos.predicados;
 import jade.content.Predicate;
 import jade.content.onto.annotations.Slot;
 
-import java.time.Instant;
+import java.util.Date;
 
 
 /**
@@ -14,14 +14,14 @@ import java.time.Instant;
 public class ConfirmacionParticipacion implements Predicate {
     private String idCoalicion;
     private String idAgente;
-    private Instant fechaConfirmacion;
+    private Date fechaConfirmacion;
 
 
     // Constructores, getters y setters
     public ConfirmacionParticipacion() {
     }
 
-    public ConfirmacionParticipacion(String idCoalicion, String idAgente, Instant fechaConfirmacion) {
+    public ConfirmacionParticipacion(String idCoalicion, String idAgente, Date fechaConfirmacion) {
         this.idCoalicion = idCoalicion;
         this.idAgente = idAgente;
         this.fechaConfirmacion = fechaConfirmacion;
@@ -46,11 +46,11 @@ public class ConfirmacionParticipacion implements Predicate {
     }
 
     @Slot(mandatory = true, name = "fechaConfirmacion")
-    public Instant getFechaConfirmacion() {
+    public Date getFechaConfirmacion() {
         return fechaConfirmacion;
     }
 
-    public void setFechaConfirmacion(Instant fechaConfirmacion) {
+    public void setFechaConfirmacion(Date fechaConfirmacion) {
         this.fechaConfirmacion = fechaConfirmacion;
     }
 }

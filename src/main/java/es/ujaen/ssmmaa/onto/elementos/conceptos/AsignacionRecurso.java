@@ -5,7 +5,8 @@ import es.ujaen.ssmmaa.onto.Vocabulario.RecursoDesarrollo;
 import jade.content.Concept;
 import jade.content.onto.annotations.Slot;
 
-import java.time.Instant;
+import java.util.Date;
+
 
 /**
  * Clase que representa una asignación específica de un recurso.
@@ -13,14 +14,14 @@ import java.time.Instant;
 public class AsignacionRecurso implements Concept {
     private RecursoDesarrollo tipoRecurso;
     private int cantidad;
-    private Instant fechaInicio;
-    private Instant fechaFin;
+    private Date fechaInicio;
+    private Date fechaFin;
     private String idTarea;
 
     public AsignacionRecurso() {
     }
 
-    public AsignacionRecurso(RecursoDesarrollo tipoRecurso, int cantidad, Instant fechaInicio, Instant fechaFin, String idTarea) {
+    public AsignacionRecurso(RecursoDesarrollo tipoRecurso, int cantidad, Date fechaInicio, Date fechaFin, String idTarea) {
         this.tipoRecurso = tipoRecurso;
         this.cantidad = cantidad;
         this.fechaInicio = fechaInicio;
@@ -47,20 +48,20 @@ public class AsignacionRecurso implements Concept {
     }
 
     @Slot(mandatory = true, name = "fechaInicio")
-    public Instant getFechaInicio() {
+    public Date getFechaInicio() {
         return fechaInicio;
     }
 
-    public void setFechaInicio(Instant fechaInicio) {
+    public void setFechaInicio(Date fechaInicio) {
         this.fechaInicio = fechaInicio;
     }
 
     @Slot(mandatory = true, name = "fechaFin")
-    public Instant getFechaFin() {
+    public Date getFechaFin() {
         return fechaFin;
     }
 
-    public void setFechaFin(Instant fechaFin) {
+    public void setFechaFin(Date fechaFin) {
         this.fechaFin = fechaFin;
     }
 
@@ -71,5 +72,16 @@ public class AsignacionRecurso implements Concept {
 
     public void setIdTarea(String idTarea) {
         this.idTarea = idTarea;
+    }
+
+    @Override
+    public String toString() {
+        return "AsignacionRecurso{" +
+                "tipoRecurso=" + tipoRecurso +
+                ", cantidad=" + cantidad +
+                ", fechaInicio=" + fechaInicio +
+                ", fechaFin=" + fechaFin +
+                ", idTarea='" + idTarea + '\'' +
+                '}';
     }
 }

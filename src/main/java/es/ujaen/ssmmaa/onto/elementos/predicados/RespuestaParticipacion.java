@@ -4,11 +4,13 @@ package es.ujaen.ssmmaa.onto.elementos.predicados;
 import es.ujaen.ssmmaa.onto.Vocabulario.LineasDesarrollo;
 import jade.content.Predicate;
 
-import java.time.Instant;
+
 
 import jade.content.onto.annotations.AggregateSlot;
 import jade.content.onto.annotations.Slot;
 import jade.util.leap.List;
+
+import java.util.Date;
 
 /**
  * Clase que representa la respuesta de participación en una coalición.
@@ -19,15 +21,15 @@ public class RespuestaParticipacion implements Predicate {
     private String idAgente;
     private List habilidadesOfrecidas;
     private int horasDisponibles;
-    private Instant fechaInicioDisponibilidad;
-    private Instant fechaFinDisponibilidad;
+    private Date fechaInicioDisponibilidad;
+    private Date fechaFinDisponibilidad;
 
     // Constructores, getters y setters
     public RespuestaParticipacion() {
     }
 
     public RespuestaParticipacion(String idCoalicion, String idAgente, List habilidadesOfrecidas, int horasDisponibles,
-                                   Instant fechaInicioDisponibilidad, Instant fechaFinDisponibilidad) {
+                                   Date fechaInicioDisponibilidad, Date fechaFinDisponibilidad) {
         this.idCoalicion = idCoalicion;
         this.idAgente = idAgente;
         this.habilidadesOfrecidas = habilidadesOfrecidas;
@@ -73,20 +75,20 @@ public class RespuestaParticipacion implements Predicate {
     }
 
     @Slot(mandatory = true, name = "fechaInicioDisponibilidad")
-    public Instant getFechaInicioDisponibilidad() {
+    public Date getFechaInicioDisponibilidad() {
         return fechaInicioDisponibilidad;
     }
 
-    public void setFechaInicioDisponibilidad(Instant fechaInicioDisponibilidad) {
+    public void setFechaInicioDisponibilidad(Date fechaInicioDisponibilidad) {
         this.fechaInicioDisponibilidad = fechaInicioDisponibilidad;
     }
 
     @Slot(mandatory = true, name = "fechaFinDisponibilidad")
-    public Instant getFechaFinDisponibilidad() {
+    public Date getFechaFinDisponibilidad() {
         return fechaFinDisponibilidad;
     }
 
-    public void setFechaFinDisponibilidad(Instant fechaFinDisponibilidad) {
+    public void setFechaFinDisponibilidad(Date fechaFinDisponibilidad) {
         this.fechaFinDisponibilidad = fechaFinDisponibilidad;
     }
 }

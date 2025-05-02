@@ -5,7 +5,7 @@ import es.ujaen.ssmmaa.onto.Vocabulario.RazonRechazo;
 import jade.content.Predicate;
 import jade.content.onto.annotations.Slot;
 
-import java.time.Instant;
+import java.util.Date;
 
 
 /**
@@ -14,7 +14,7 @@ import java.time.Instant;
  */
 public class RechazoAsignacionRecursos implements Predicate {
     private String idSolicitud;
-    private Instant fechaRechazo;
+    private Date fechaRechazo;
     private RazonRechazo razonPrincipal;
 
 
@@ -22,7 +22,7 @@ public class RechazoAsignacionRecursos implements Predicate {
     public RechazoAsignacionRecursos() {
     }
 
-    public RechazoAsignacionRecursos(String idSolicitud, Instant fechaRechazo, RazonRechazo razonPrincipal) {
+    public RechazoAsignacionRecursos(String idSolicitud, Date fechaRechazo, RazonRechazo razonPrincipal) {
         this.idSolicitud = idSolicitud;
         this.fechaRechazo = fechaRechazo;
         this.razonPrincipal = razonPrincipal;
@@ -38,11 +38,11 @@ public class RechazoAsignacionRecursos implements Predicate {
     }
 
     @Slot(mandatory = true, name = "fechaRechazo")
-    public Instant getFechaRechazo() {
+    public Date getFechaRechazo() {
         return fechaRechazo;
     }
 
-    public void setFechaRechazo(Instant fechaRechazo) {
+    public void setFechaRechazo(Date fechaRechazo) {
         this.fechaRechazo = fechaRechazo;
     }
 

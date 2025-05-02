@@ -5,7 +5,7 @@ import es.ujaen.ssmmaa.onto.Vocabulario.EstadoTarea;
 import jade.content.Concept;
 import jade.content.onto.annotations.Slot;
 
-import java.time.Instant;
+import java.util.Date;
 
 
 /**
@@ -15,14 +15,14 @@ public class EstadoTareaInfo implements Concept {
     private String idTarea;
     private EstadoTarea estadoActual;
     private double progresoPorcentaje;
-    private Instant ultimaActualizacion;
+    private Date ultimaActualizacion;
     private int horasInvertidas;
     private int horasRestimadas;
 
     public EstadoTareaInfo() {
     }
 
-    public EstadoTareaInfo(String idTarea, EstadoTarea estadoActual, double progresoPorcentaje, Instant ultimaActualizacion,
+    public EstadoTareaInfo(String idTarea, EstadoTarea estadoActual, double progresoPorcentaje, Date ultimaActualizacion,
                            int horasInvertidas, int horasRestimadas) {
         this.idTarea = idTarea;
         this.estadoActual = estadoActual;
@@ -60,11 +60,11 @@ public class EstadoTareaInfo implements Concept {
     }
 
     @Slot(mandatory = true, name = "ultimaActualizacion")
-    public Instant getUltimaActualizacion() {
+    public Date getUltimaActualizacion() {
         return ultimaActualizacion;
     }
 
-    public void setUltimaActualizacion(Instant ultimaActualizacion) {
+    public void setUltimaActualizacion(Date ultimaActualizacion) {
         this.ultimaActualizacion = ultimaActualizacion;
     }
 
@@ -84,5 +84,17 @@ public class EstadoTareaInfo implements Concept {
 
     public void setHorasRestimadas(int horasRestimadas) {
         this.horasRestimadas = horasRestimadas;
+    }
+
+    @Override
+    public String toString() {
+        return "EstadoTareaInfo{" +
+                "idTarea='" + idTarea + '\'' +
+                ", estadoActual=" + estadoActual +
+                ", progresoPorcentaje=" + progresoPorcentaje +
+                ", ultimaActualizacion=" + ultimaActualizacion +
+                ", horasInvertidas=" + horasInvertidas +
+                ", horasRestimadas=" + horasRestimadas +
+                '}';
     }
 }

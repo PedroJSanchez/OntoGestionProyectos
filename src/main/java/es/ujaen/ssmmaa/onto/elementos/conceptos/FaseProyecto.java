@@ -3,7 +3,7 @@ package es.ujaen.ssmmaa.onto.elementos.conceptos;
 import jade.content.Concept;
 import jade.content.onto.annotations.Slot;
 
-import java.time.Instant;
+
 import java.util.Date;
 
 /**
@@ -12,13 +12,13 @@ import java.util.Date;
 public class FaseProyecto implements Concept {
     private String idFase;
     private String nombre;
-    private Instant fechaInicio;
-    private Instant fechaFin;
+    private Date fechaInicio;
+    private Date fechaFin;
 
     public FaseProyecto() {
     }
 
-    public FaseProyecto(String idFase, String nombre, Instant fechaInicio, Instant fechaFin) {
+    public FaseProyecto(String idFase, String nombre, Date fechaInicio, Date fechaFin) {
         this.idFase = idFase;
         this.nombre = nombre;
         this.fechaInicio = fechaInicio;
@@ -44,20 +44,30 @@ public class FaseProyecto implements Concept {
     }
 
     @Slot(mandatory = true, name = "fechaInicio")
-    public Instant getFechaInicio() {
+    public Date getFechaInicio() {
         return fechaInicio;
     }
 
-    public void setFechaInicio(Instant fechaInicio) {
+    public void setFechaInicio(Date fechaInicio) {
         this.fechaInicio = fechaInicio;
     }
 
     @Slot(mandatory = true, name = "fechaFin")
-    public Instant getFechaFin() {
+    public Date getFechaFin() {
         return fechaFin;
     }
 
-    public void setFechaFin(Instant fechaFin) {
+    public void setFechaFin(Date fechaFin) {
         this.fechaFin = fechaFin;
+    }
+
+    @Override
+    public String toString() {
+        return "FaseProyecto{" +
+                "idFase='" + idFase + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", fechaInicio=" + fechaInicio +
+                ", fechaFin=" + fechaFin +
+                '}';
     }
 }

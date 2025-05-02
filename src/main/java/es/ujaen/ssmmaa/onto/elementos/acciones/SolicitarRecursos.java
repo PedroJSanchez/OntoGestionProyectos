@@ -2,15 +2,15 @@ package es.ujaen.ssmmaa.onto.elementos.acciones;
 
 
 import es.ujaen.ssmmaa.onto.Vocabulario.Prioridad;
-import es.ujaen.ssmmaa.onto.Vocabulario.RecursoDesarrollo;
 import es.ujaen.ssmmaa.onto.elementos.conceptos.SolicitudRecurso;
 import jade.content.AgentAction;
 
-import java.time.Instant;
 
 import jade.content.onto.annotations.AggregateSlot;
 import jade.content.onto.annotations.Slot;
 import jade.util.leap.List;
+
+import java.util.Date;
 
 /**
  * Clase que representa la acción de solicitar recursos específicos.
@@ -22,14 +22,14 @@ public class SolicitarRecursos implements AgentAction {
     private String idTarea;
     private List recursosSolicitados;
     private Prioridad prioridad;
-    private Instant fechaInicio;
-    private Instant fechaFin;
+    private Date fechaInicio;
+    private Date fechaFin;
 
     public SolicitarRecursos() {
     }
 
     public SolicitarRecursos(String idSolicitud, String idProyecto, String idTarea, List recursosSolicitados,
-                             Prioridad prioridad, Instant fechaInicio, Instant fechaFin) {
+                             Prioridad prioridad, Date fechaInicio, Date fechaFin) {
         this.idSolicitud = idSolicitud;
         this.idProyecto = idProyecto;
         this.idTarea = idTarea;
@@ -85,20 +85,20 @@ public class SolicitarRecursos implements AgentAction {
     }
 
     @Slot(mandatory = true, name = "fechaInicio")
-    public Instant getFechaInicio() {
+    public Date getFechaInicio() {
         return fechaInicio;
     }
 
-    public void setFechaInicio(Instant fechaInicio) {
+    public void setFechaInicio(Date fechaInicio) {
         this.fechaInicio = fechaInicio;
     }
 
     @Slot(mandatory = true, name = "fechaFin")
-    public Instant getFechaFin() {
+    public Date getFechaFin() {
         return fechaFin;
     }
 
-    public void setFechaFin(Instant fechaFin) {
+    public void setFechaFin(Date fechaFin) {
         this.fechaFin = fechaFin;
     }
 }

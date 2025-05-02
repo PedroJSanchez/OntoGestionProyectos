@@ -2,15 +2,14 @@ package es.ujaen.ssmmaa.onto.elementos.acciones;
 
 
 import es.ujaen.ssmmaa.onto.Vocabulario.Prioridad;
-import es.ujaen.ssmmaa.onto.Vocabulario.RecursoDesarrollo;
 import es.ujaen.ssmmaa.onto.elementos.conceptos.AsignacionRecurso;
 import jade.content.AgentAction;
 import jade.content.onto.annotations.AggregateSlot;
 import jade.content.onto.annotations.Slot;
-import jade.core.AID;
 
-import java.time.Instant;
 import jade.util.leap.List;
+
+import java.util.Date;
 
 /**
  * Clase que representa la acción de asignar recursos formalmente a los proyectos.
@@ -20,13 +19,13 @@ public class AsignarRecursos implements AgentAction {
     private String idProyecto;
     private List recursosAsignar;
     private Prioridad prioridad;
-    private Instant fechaAsignacion;
+    private Date fechaAsignacion;
     private String idCoalicion;  // Si la asignación es para una coalición
 
     public AsignarRecursos() {
     }
 
-    public AsignarRecursos(String idProyecto, List recursosAsignar, Prioridad prioridad, Instant fechaAsignacion,
+    public AsignarRecursos(String idProyecto, List recursosAsignar, Prioridad prioridad, Date fechaAsignacion,
                            String idCoalicion) {
         this.idProyecto = idProyecto;
         this.recursosAsignar = recursosAsignar;
@@ -63,11 +62,11 @@ public class AsignarRecursos implements AgentAction {
     }
 
     @Slot(mandatory = true, name = "fechaAsignacion")
-    public Instant getFechaAsignacion() {
+    public Date getFechaAsignacion() {
         return fechaAsignacion;
     }
 
-    public void setFechaAsignacion(Instant fechaAsignacion) {
+    public void setFechaAsignacion(Date fechaAsignacion) {
         this.fechaAsignacion = fechaAsignacion;
     }
 

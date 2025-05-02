@@ -59,4 +59,14 @@ public class RecursoCoalicion implements Concept {
     public void setCompartible(boolean compartible) {
         this.compartible = compartible;
     }
+
+    @Override
+    public String toString() {
+        return "RecursoCoalicion{" +
+                "tipoRecurso=" + tipoRecurso +
+                ", cantidad=" + cantidad +
+                ", horasNecesarias=" + horasNecesarias +
+                ", compartible=" + compartible +
+                '}';
+    }
 }

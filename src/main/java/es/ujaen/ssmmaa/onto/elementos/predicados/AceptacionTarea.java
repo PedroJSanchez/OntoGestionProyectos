@@ -4,7 +4,8 @@ package es.ujaen.ssmmaa.onto.elementos.predicados;
 import jade.content.Predicate;
 import jade.content.onto.annotations.Slot;
 
-import java.time.Instant;
+import java.util.Date;
+
 
 /**
  * Clase que representa la aceptación de una asignación de tarea.
@@ -12,15 +13,15 @@ import java.time.Instant;
  */
 public class AceptacionTarea implements Predicate {
     private String idTarea;
-    private Instant fechaAceptacion;
-    private Instant fechaInicioReal;
-    private Instant fechaFinEstimada;
+    private Date fechaAceptacion;
+    private Date fechaInicioReal;
+    private Date fechaFinEstimada;
 
     // Constructores, getters y setters
     public AceptacionTarea() {
     }
 
-    public AceptacionTarea(String idTarea, Instant fechaAceptacion, Instant fechaInicioReal, Instant fechaFinEstimada) {
+    public AceptacionTarea(String idTarea, Date fechaAceptacion, Date fechaInicioReal, Date fechaFinEstimada) {
         this.idTarea = idTarea;
         this.fechaAceptacion = fechaAceptacion;
         this.fechaInicioReal = fechaInicioReal;
@@ -37,29 +38,29 @@ public class AceptacionTarea implements Predicate {
     }
 
     @Slot(mandatory = true, name = "fechaAceptacion")
-    public Instant getFechaAceptacion() {
+    public Date getFechaAceptacion() {
         return fechaAceptacion;
     }
 
-    public void setFechaAceptacion(Instant fechaAceptacion) {
+    public void setFechaAceptacion(Date fechaAceptacion) {
         this.fechaAceptacion = fechaAceptacion;
     }
 
     @Slot(mandatory = true, name = "fechaInicioReal")
-    public Instant getFechaInicioReal() {
+    public Date getFechaInicioReal() {
         return fechaInicioReal;
     }
 
-    public void setFechaInicioReal(Instant fechaInicioReal) {
+    public void setFechaInicioReal(Date fechaInicioReal) {
         this.fechaInicioReal = fechaInicioReal;
     }
 
     @Slot(mandatory = true, name = "fechaFinEstimada")
-    public Instant getFechaFinEstimada() {
+    public Date getFechaFinEstimada() {
         return fechaFinEstimada;
     }
 
-    public void setFechaFinEstimada(Instant fechaFinEstimada) {
+    public void setFechaFinEstimada(Date fechaFinEstimada) {
         this.fechaFinEstimada = fechaFinEstimada;
     }
 }

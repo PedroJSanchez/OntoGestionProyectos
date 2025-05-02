@@ -4,11 +4,13 @@ package es.ujaen.ssmmaa.onto.elementos.predicados;
 import es.ujaen.ssmmaa.onto.elementos.conceptos.RecursoEntregado;
 import jade.content.Predicate;
 
-import java.time.Instant;
+
 
 import jade.content.onto.annotations.AggregateSlot;
 import jade.content.onto.annotations.Slot;
 import jade.util.leap.List;
+
+import java.util.Date;
 
 /**
  * Clase que representa la confirmación de recursos asignados.
@@ -18,7 +20,7 @@ public class RecursoAsignado implements Predicate {
     private String idSolicitud;
     private String idProyecto;
     private String idTarea;
-    private Instant fechaAsignacion;
+    private Date fechaAsignacion;
     private List recursosAsignados;
 
 
@@ -26,7 +28,7 @@ public class RecursoAsignado implements Predicate {
     public RecursoAsignado() {
     }
 
-    public RecursoAsignado(String idSolicitud, String idProyecto, String idTarea, Instant fechaAsignacion, List recursosAsignados) {
+    public RecursoAsignado(String idSolicitud, String idProyecto, String idTarea, Date fechaAsignacion, List recursosAsignados) {
         this.idSolicitud = idSolicitud;
         this.idProyecto = idProyecto;
         this.idTarea = idTarea;
@@ -62,11 +64,11 @@ public class RecursoAsignado implements Predicate {
     }
 
     @Slot(mandatory = true, name = "fechaAsignacion")
-    public Instant getFechaAsignacion() {
+    public Date getFechaAsignacion() {
         return fechaAsignacion;
     }
 
-    public void setFechaAsignacion(Instant fechaAsignacion) {
+    public void setFechaAsignacion(Date fechaAsignacion) {
         this.fechaAsignacion = fechaAsignacion;
     }
 

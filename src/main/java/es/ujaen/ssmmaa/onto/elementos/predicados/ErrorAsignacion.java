@@ -5,7 +5,7 @@ import es.ujaen.ssmmaa.onto.Vocabulario.ErrorAsignacionRecurso;
 import jade.content.Predicate;
 import jade.content.onto.annotations.Slot;
 
-import java.time.Instant;
+import java.util.Date;
 
 
 /**
@@ -14,7 +14,7 @@ import java.time.Instant;
  */
 public class ErrorAsignacion implements Predicate {
     private String idSolicitud;
-    private Instant fechaError;
+    private Date fechaError;
     private ErrorAsignacionRecurso tipoError;
 
 
@@ -22,7 +22,7 @@ public class ErrorAsignacion implements Predicate {
     public ErrorAsignacion() {
     }
 
-    public ErrorAsignacion(String idSolicitud, Instant fechaError, ErrorAsignacionRecurso tipoError) {
+    public ErrorAsignacion(String idSolicitud, Date fechaError, ErrorAsignacionRecurso tipoError) {
         this.idSolicitud = idSolicitud;
         this.fechaError = fechaError;
         this.tipoError = tipoError;
@@ -38,11 +38,11 @@ public class ErrorAsignacion implements Predicate {
     }
 
     @Slot(mandatory = true, name = "fechaError")
-    public Instant getFechaError() {
+    public Date getFechaError() {
         return fechaError;
     }
 
-    public void setFechaError(Instant fechaError) {
+    public void setFechaError(Date fechaError) {
         this.fechaError = fechaError;
     }
 
